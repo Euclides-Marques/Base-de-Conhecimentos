@@ -88,6 +88,7 @@ div input:focus {
     transform: scale(0.98);
 }
 
+/* Estilos para o contêiner dos cards */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -154,9 +155,22 @@ main {
     color: white;
     transform: rotateY(180deg);
     padding: 1rem;
+    text-align: center; /* Centraliza o texto no verso do card */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    gap: 0.5rem; /* Espaçamento entre os elementos filhos */
+}
+
+.card-back > * { /* Reseta as margens de todos os filhos diretos do card-back */
+    margin: 0;
+}
+
+/* Estilos para o contêiner dos botões no verso do card */
+.card-back > div {
+    display: flex;
+    flex-direction: column; /* Empilha os botões verticalmente */
+    gap: 0.5rem; /* Espaçamento entre os botões */
 }
 
 .card-back button {
@@ -166,8 +180,7 @@ main {
     background-color: transparent;
     color: var(--primary-color);
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    margin-top: 0.5rem;
+    transition: background-color 0.3s, color 0.3s; /* Mantém a transição */
 }
 
 .card-back button:hover {
@@ -180,16 +193,12 @@ main {
     font-weight: 600;
     font-size: 1.6rem;
     border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0.25rem;
     color: var(--primary-color);
 }
 
 .card p {
-    margin: 0.5rem 0;
     line-height: 1.6;
     font-size: 0.9rem;
-    margin-bottom: 0.5rem;
     color: var(--secondary-color);
 }
 
@@ -213,7 +222,6 @@ main {
     align-items: center;
     gap: 0.5rem;
     justify-content: center;
-    margin: 0.5rem 0;
 }
 
 .star {
@@ -279,9 +287,9 @@ main {
         padding: 0 1rem;
     }
 
-    article:hover {
+    /* Removido: article:hover {
         transform: none;
-    }
+    } */
 }
 
 @media (max-width: 480px) {
@@ -296,11 +304,39 @@ main {
         font-size: 1rem;
     }
 
-    .card h2 {
-        font-size: 1.3rem;
+    .card-container {
+        gap: 1rem; /* Reduz o espaçamento entre os cards em telas pequenas */
     }
 
-    div {
+    .card {
+        width: 90%; /* Ocupa 90% da largura disponível */
+        height: 320px; /* Altura fixa para consistência */
+        max-width: 300px; /* Garante que o card não fique muito largo em telas um pouco maiores */
+    }
+
+    .card-back {
+        padding: 0.8rem; /* Ajusta o padding do verso do card */
+        /* A linha abaixo foi removida para corrigir o espaçamento vertical */
+    }
+
+    .card h2 {
+        font-size: 1.3rem; /* Reduz o tamanho do título do card */
+    }
+
+    .card p {
+        font-size: 0.85rem; /* Reduz o tamanho do texto do card */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    .card-back button {
+        padding: 0.4rem 0.8rem; /* Ajusta o padding dos botões */
+        font-size: 0.85rem; /* Reduz o tamanho da fonte dos botões */
+    }
+
+    .header-content {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -312,7 +348,5 @@ main {
         display: none;
     }
 
-    #botao-busca {
-        margin-top: 1rem;
-    }
+    /* Removido: #botao-busca { margin-top: 1rem; } - o gap do div pai já gerencia */
 }
