@@ -88,7 +88,7 @@ div input:focus {
     transform: scale(0.98);
 }
 
-/* Estilos para o contêiner dos cards */
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -105,12 +105,12 @@ main {
     height: calc(100vh - 10rem - 4rem);
 }
 
-/* Estilos para o efeito de flip do card */
+
 .card {
     background-color: transparent;
     width: 250px;
     height: 370px;
-    perspective: 1000px; /* Efeito 3D */
+    perspective: 1000px; 
     cursor: pointer;
 }
 
@@ -133,7 +133,7 @@ main {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
@@ -155,22 +155,22 @@ main {
     color: white;
     transform: rotateY(180deg);
     padding: 1rem;
-    text-align: center; /* Centraliza o texto no verso do card */
+    text-align: center; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alinha o conteúdo ao topo */
-    gap: 0.5rem; /* Espaçamento entre os elementos filhos */
+    justify-content: flex-start; 
+    gap: 0.5rem; 
 }
 
-.card-back > * { /* Reseta as margens de todos os filhos diretos do card-back */
+.card-back > * { 
     margin: 0;
 }
 
-/* Estilos para o contêiner dos botões no verso do card */
+
 .card-back > div {
     display: flex;
-    flex-direction: column; /* Empilha os botões verticalmente */
-    gap: 0.5rem; /* Espaçamento entre os botões */
+    flex-direction: column; 
+    gap: 0.5rem; 
 }
 
 .card-back button {
@@ -180,7 +180,7 @@ main {
     background-color: transparent;
     color: var(--primary-color);
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Mantém a transição */
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 .card-back button:hover {
@@ -286,10 +286,6 @@ main {
     main {
         padding: 0 1rem;
     }
-
-    /* Removido: article:hover {
-        transform: none;
-    } */
 }
 
 @media (max-width: 480px) {
@@ -305,26 +301,26 @@ main {
     }
 
     .card-container {
-        gap: 1rem; /* Reduz o espaçamento entre os cards em telas pequenas */
+        gap: 1rem; 
     }
 
     .card {
-        width: 90%; /* Ocupa 90% da largura disponível */
-        height: 320px; /* Altura fixa para consistência */
-        max-width: 300px; /* Garante que o card não fique muito largo em telas um pouco maiores */
+        width: 90%; 
+        height: 320px; 
+        max-width: 300px; 
     }
 
     .card-back {
-        padding: 0.8rem; /* Ajusta o padding do verso do card */
-        /* A linha abaixo foi removida para corrigir o espaçamento vertical */
+        padding: 0.8rem; 
+        
     }
 
     .card h2 {
-        font-size: 1.3rem; /* Reduz o tamanho do título do card */
+        font-size: 1.3rem; 
     }
 
     .card p {
-        font-size: 0.85rem; /* Reduz o tamanho do texto do card */
+        font-size: 0.85rem; 
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -332,8 +328,8 @@ main {
     }
 
     .card-back button {
-        padding: 0.4rem 0.8rem; /* Ajusta o padding dos botões */
-        font-size: 0.85rem; /* Reduz o tamanho da fonte dos botões */
+        padding: 0.4rem 0.8rem; 
+        font-size: 0.85rem; 
     }
 
     .header-content {
@@ -346,7 +342,5 @@ main {
 
     .footer {
         display: none;
-    }
-
-    /* Removido: #botao-busca { margin-top: 1rem; } - o gap do div pai já gerencia */
+    }    
 }
